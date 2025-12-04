@@ -1,7 +1,5 @@
-import requests
 import random
 from time import *
-
 import requests
 
 BASE_SONGS = {
