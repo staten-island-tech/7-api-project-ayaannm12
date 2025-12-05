@@ -57,3 +57,4 @@ output = tk.Text(win, width=33, height=15)
 output.pack(pady=5)
 
 win.mainloop()
+#not a api and reminder to learn more abt tkinter cs most of tk was js goodle + ai
