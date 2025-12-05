@@ -1,9 +1,7 @@
-# this is my apex legends search thing
-# i tried to make it look kinda normal but stil simple
+
 
 import tkinter as tk
 
-# all apex legends with short info
 data = {
     "wraith":{"stats":"fast","story":"lab stuff","playstyle":"rush","reviews":"good"},
     "octane":{"stats":"fast but dum","story":"blew legs","playstyle":"run alot","reviews":"fun"},
