@@ -4,7 +4,7 @@ import requests
 
 
 def getGames(Games):
-    response = requests.get(f"https://videogamedb.uk:443/{Games.lower()}")
+    response = requests.get(f"https://videogamedb.uk/v3/api-docs/{Games.lower()}")
     if response.status_code != 200:
         print("Error fetching data !!!")
         return None
