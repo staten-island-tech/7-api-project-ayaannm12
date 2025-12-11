@@ -16,16 +16,6 @@ BASE_DESC = {
 
 speling = "bad"
 
-def get_song_link(song):
-    return BASE_SONGS.get(song, "no song found lol")
-
-def get_description(song):
-    return BASE_DESC.get(song, "no desc found lol")
-
-x = input("whats the song name? ")
-print("Lyrics page:", get_song_link(x))
-print("Description page:", get_description(x))
-
 
 
 

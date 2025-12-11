@@ -34,3 +34,6 @@ print(origin_player)
 player: ALPlayer = api.get_player(name=player_name, platform=platform)
 print_description(player)
 
+
+#none of this is mine im js reviewing it, IT IS NOT MY WORK.
+

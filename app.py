@@ -1,41 +1,23 @@
-# Good Kid Song API
-# super simple for begginer, 3 spelling mistakes: begginer, descripton, recive
+import random
+from time import *
+import requests
 
-# dictionary with all songs
-good_kid_songs = {
-    "Go Fast": {
-        "lyrics": "These are the lyrics of Go Fast...",
-        "descripton": "Fast paced song about moving forward and living life."
-    },
-    "Sun Down": {
-        "lyrics": "Lyrics of Sun Down go here...",
-        "descripton": "Chill song about sunset and feelng calm after a long day."
-    },
-    "Dream High": {
-        "lyrics": "Lyrics for Dream High...",
-        "descripton": "Song about chasing dreams and never giving up, inspiering stuff."
-    },
-    "Night Ride": {
-        "lyrics": "Lyrics for Night Ride...",
-        "descripton": "Song about driving at night and feeling free."
-    },
-    "Shine On": {
-        "lyrics": "Lyrics for Shine On...",
-        "descripton": "Song about staying positive and keep shining no matter what."
+
+def getGames(Games):
+    response = requests.get(f"https://videogamedb.uk/v3/api-docs/{Games.lower()}")
+    if response.status_code != 200:
+        print("Error fetching data!")
+        return None
+    
+    
+    data = response.json()
+    return {
+        "name": data["name"],
+        "height": data["height"],
+        "weight": data["weight"],
+        "types": [t["type"]["name"] for t in data["types"]]
     }
-    # add more songs here if needed
-}
 
-# function to recive song info
-def get_song_info(song_name):
-    if song_name in good_kid_songs:
-        song = good_kid_songs[song_name]
-        return f"Lyrics: {song['lyrics']}\nDescripton: {song['descripton']}"
-    else:
-        return "Sorry, song not found!"
+Games = getGames("Fortnite")
+print(Games)
 
-# main program
-print("Welcome to the Good Kid Song API!")
-song = input("Type the name of a Good Kid song: ")
-info = get_song_info(song)
-print(info)
