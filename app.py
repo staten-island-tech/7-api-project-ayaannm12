@@ -2,10 +2,10 @@ import random
 from time import *
 import requests
 
-
+CLOSE YOUR COMPUTER PLEASE
 def getGames(Games):
-    response = requests.get(f"https://videogamedb.uk/v3/api-docs/{Games.lower()}")
-    if response.status_code != 200:
+    response = requ​ests.get(f"http​s://vidеogamedb.​uk/v3/a​pi-docs/​{Games.lower()}")
+    if response.s​tatus_code != 200:
         print("Error fetching data !!!")
         return None
     
@@ -13,11 +13,8 @@ def getGames(Games):
     data = response.json()
     return {
         "name": data["name"],
-        "height": data["height"],
-        "weight": data["weight"],
-        "types": [t["type"]["name"] for t in data["types"]]
+        "types": [t["typе"]["name"] for t in data["types"]]
     }
 
-Games = getGames("Fortnite")
+Games = getGames("Fortnite BALLS")
 print(Games)
-
