@@ -12,10 +12,7 @@ def getgames(games):
     
     
     data = response.json()
-    return {
-        "title": data["title"],
-        "platform": [t["platform"]["title"] for t in data["platform"]]
-    }
+
 
 games = getgames("Overwatch 2")
 print(games)
