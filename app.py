@@ -16,4 +16,3 @@ def getgames():
     for game in data:
         print(game["title"])
 games = getgames()
-print(games)
