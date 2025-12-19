@@ -20,6 +20,10 @@ games = getgames("Overwatch 2")
 =======
     for game in data:
         print(game["title"])
+<<<<<<< HEAD
+games = getgames()
+=======
 games = getgames()
 >>>>>>> eba3323db7bc91eddcb53b63a9732e7fc2d02216
 print(games)
+>>>>>>> e8c003d35f86c77fc4ab4d067ad49d007b2b0d0c
