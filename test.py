@@ -22,15 +22,11 @@ def getgames():
                 matches = [g for g in data if g['genre'].lower() == gw]
                 selection = random.choice(matches)
                 pi = True
-                print(f"Heres all games that fall under that genre")
+                print(f"Heres a game that fall under that genre")
                 print(f"Title: {selection['title']}")
                 print(f"Thumbnail: {selection['thumbnail']}")
                 print(f"Short_description: {selection['short_description']}")
                 print(f"game_url: {selection['game_url']}")
-            else:
-                print("yo thats not a genre bru wyd lock in gng")
-                while pi == False:
-                    gw = input("enter genre here: ").strip().lower()
 
 
 
