@@ -52,18 +52,4 @@ def getgames():
         result_label = tk.Label(window, textvariable=result_text, justify="left")
         result_label.pack(pady=10)
 
-<<<<<<< HEAD
-=======
-        image_label = tk.Label(window)
-        image_label.pack(pady=10)
-
-        window.mainloop()
-
-def display_image_from_url(url):
-   with urllib.request.urlopen(url) as u:
-    raw_data = u.read()
-    image = Image.open(io.BytesIO(raw_data))
-    photo = ImageTk.PhotoImage(image)
-    return photo
->>>>>>> 773aa3ae4419154caceaac60fc1e23aab8787029
 getgames()
