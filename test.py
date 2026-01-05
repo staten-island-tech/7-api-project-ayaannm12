@@ -2,8 +2,7 @@ from time import *
 import requests, random, io, urllib
 import tkinter as tk
 from tkinter import messagebox
-from PIL import ImageTk,Image
-from io import BytesIO
+
 
 def getgames():
     response = requests.get("https://www.freetogame.com/api/games?platform=pc")

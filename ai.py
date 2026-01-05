@@ -2,8 +2,7 @@ import random
 import requests
 import tkinter as tk
 from PIL import ImageTk, Image
-from io import BytesIO
-import threading
+
 
 def getgames(output, entry):
     response = requests.get("https://www.freetogame.com/api/games?platform=pc")
@@ -20,8 +19,8 @@ def getgames(output, entry):
 
     def submit():
         nonlocal pi
-        gw = entry.get().strip().lower()  # Get genre input from Entry widget
-        entry.delete(0, tk.END)  # Clear the input field after reading the genre
+        gw = entry.get().strip().lower()  
+        entry.delete(0, tk.END) 
 
         if gw in all_genres and not pi:
             matches = [g for g in data if g['genre'].lower() == gw]
@@ -36,30 +35,29 @@ def getgames(output, entry):
         elif not pi:
             output.insert(tk.END, "Invalid genre, try again\n")
 
-    # Trigger the genre search when the button is clicked
-    button.config(command=submit)
 
 def launch_with_gui():
     window = tk.Tk()
     window.title("Free Games API Launcher")
     window.geometry("600x400")
 
-    # Create output text widget
+
     output = tk.Text(window, height=15, width=70)
     output.pack(padx=10, pady=10)
 
-    # Create input entry widget
+
     entry = tk.Entry(window)
     entry.pack(fill="x", padx=10)
 
-    # Create submit button
     button = tk.Button(window, text="Submit Genre")
     button.pack(pady=5)
-
-    # Run the game-fetching logic in a separate thread to avoid blocking the UI
     threading.Thread(target=lambda: getgames(output, entry)).start()
 
     window.mainloop()
 
-# Launch the GUI
+
 launch_with_gui()
+
+
+
+#this is everything that i took from AI (not 100% cs i obviosuly gave it MY code to add on to)
